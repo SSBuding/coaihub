@@ -1,13 +1,9 @@
-const Koa = require('koa')
-const KoaRouter = require('@koa/router')
+// 1.导入app
+const app = require('./app')
+const { SERVER_PORT } = require('./config/server')
+require('./utils/handle-error')
 
-const app =new Koa()
-const userRouter = new KoaRouter({prefix:'/users'})
-userRouter.get('/list',(ctx,next)=>{
-  ctx.body = 'success'
-})
-app.use(userRouter.routes())
-app.use(userRouter.allowedMethods())
-app.listen(8000,()=>{
-  console.log('success')
+// 2.将app启动起来
+app.listen(SERVER_PORT, () => {
+  console.log('服务器启动成功~')
 })
