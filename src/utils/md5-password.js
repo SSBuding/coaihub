@@ -1,3 +1,4 @@
+// node内置加密
 const crypto = require('crypto')
 
 function md5password(password) {

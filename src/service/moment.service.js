@@ -8,7 +8,7 @@ class MomentService {
   }
 
   async queryList(offset = 0, size = 10) {
-    console.log(offset, size)
+   // console.log(offset, size)
     const statement = `
       SELECT 
         m.id id, m.content content, m.createAt createTime, m.updateAt updateTime,
